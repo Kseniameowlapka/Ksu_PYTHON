@@ -2,12 +2,12 @@
 #Использовать локальные переменные.
 
 def sum_of_series(n):
-    total_sum = 0  # Локальная переменная для хранения суммы
-    for i in range(1, n + 1):  # Цикл от 1 до n (включительно)
-        total_sum += i  # Добавление текущего числа к сумме
-    return total_sum  # Возвращаем итоговую сумму
+    total_sum = 0  
+    for i in range(1, n + 1): 
+        total_sum += i  
+    return total_sum 
 
 # Основная часть программы
 n = 60
-result = sum_of_series(n)  # Вызов функции для нахождения суммы
+result = sum_of_series(n)  
 print("Сумма чисел от 1 до", n, "равна:", result)
