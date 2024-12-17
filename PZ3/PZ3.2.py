@@ -2,21 +2,24 @@
 #определяющую название цвета в зависимости от введенной длины волны.
 
 def determine_color(wavelength):
-    colors = {
-        (0, 450): "Фиолетовый",
-        (450, 480): "Синий",
-        (480, 510): "Сине-зелёный",
-        (510, 550): "Зелёный",
-        (550, 570): "Жёлто-зелёный",
-        (570, 590): "Жёлтый",
-        (590, 630): "Оранжевый",
-        (630, 700): "Красный"
-    }
-    
-    for (lower, upper), color in colors.items():
-        if lower < wavelength <= upper:
-            return color
-    return "Неизвестный диапазон"
+    if wavelength <= 450:
+        return "Фиолетовый"
+    elif 450 < wavelength <= 480:
+        return "Синий"
+    elif 480 < wavelength <= 510:
+        return "Сине-зелёный"
+    elif 510 < wavelength <= 550:
+        return "Зелёный"
+    elif 550 < wavelength <= 570:
+        return "Жёлто-зелёный"
+    elif 570 < wavelength <= 590:
+        return "Жёлтый"
+    elif 590 < wavelength <= 630:
+        return "Оранжевый"
+    elif wavelength >= 630:
+        return "Красный"
+    else:
+        return "Неизвестный диапазон"
 
 
 # Ввод пользователя
