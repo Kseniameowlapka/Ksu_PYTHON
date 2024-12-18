@@ -9,4 +9,3 @@ for kg in range(1, 11):  # от 1 до 10 (0.1 до 1.0)
     weight = kg / 10      # переводим в кг (0.1, 0.2, ..., 1.0) 
     cost = weight * price_per_kg 
 print(f"{weight:.1f} кг: руб.")  # выводим стакан с ценой
-
