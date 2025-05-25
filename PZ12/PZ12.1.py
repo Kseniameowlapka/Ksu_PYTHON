@@ -1,14 +1,10 @@
 #В последовательности на n целых чисел умножить элементы до n-1 на элемент n
 
-# Вводим последовательность с n элементами
-sequence = [int(x) for x in input("Введите последовательность чисел, разделённых пробелом: ").split()]
+def multiply_by_last(seq):
+    if not seq:
+        return []
+    last = seq[-1]
+    return list(map(lambda x: x * last, seq[:-1])) + [last]
 
-# Проверяем, что элементов достаточно
-if len(sequence) < 2:
-    print("Последовательность должна содержать минимум два элемента.")
-else:
-    n = len(sequence)
-    last_element = sequence[-1]
-    # Умножаем все элементы до n-1 на последний элемент с помощью lambda
-    sequence[:-1] = map(lambda x: x * last_element, sequence[:-1])
-    print("Изменённая последовательность:", sequence)
+seq = [2, 3, 4, 5]
+print(multiply_by_last(seq))
