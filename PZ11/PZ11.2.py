@@ -7,9 +7,15 @@ f = open("11.2.txt", "r", encoding="utf-8")
 rl = f.readlines()
 text = "".join(rl)
 fo = open("11.2-output.txt", "w", encoding="utf-8")
-[fo.writelines(i.lower()) for i in rl]
+fo.writelines([i.lower() for i in rl])  # Исправлено: передаем список в writelines
+fo.close()  # Важно закрыть файл после записи
+
 cnt = 0
-l = "абвгдеёжзиклмнопрстуфхцчшщъыьэюя"
-[cnt := cnt + 1 for s in text if s.lower() in l]
+l = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"  # Исправлено: добавлена пропущенная буква "й"
+for s in text:
+    if s.lower() in l:
+        cnt += 1
+
 print(text)
 print(cnt)
+f.close()  # Закрываем исходный файл
