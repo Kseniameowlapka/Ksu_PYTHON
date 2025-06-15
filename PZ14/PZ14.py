@@ -6,12 +6,11 @@
 import re
 from os.path import join, dirname
 
-with open("hotline.txt", "r+", encoding="utf-8") as file:
+with open("PZ14/hotline.txt", "r+", encoding="utf-8") as file:
  filepath = join(dirname(__file__), 'hotline.txt')
 
 with open(filepath, "r+", encoding="utf-8") as file:
     text = file.read()
-
 text, count_replacements = re.subn(r"Горячая линия", "Горячая линия Министерства образования Ростовской области", text)
 
 last50 = re.findall(r"\b\d+50\b", text)
