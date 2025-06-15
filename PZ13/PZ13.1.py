@@ -2,18 +2,14 @@
 #раза.
 import random
 
-n = 3  
-matrix = [[random.randint(1, 10) for _ in range(n)] for _ in range(n)]
+def modify_matrix(m):
+    return [[x*2 if i!=j else x for j,x in enumerate(row)] for i,row in enumerate(m)]
 
-print("Исходная матрица:")
-for row in matrix:
-    print(row)
+n = 3
+matrix = [[random.randint(1,10) for _ in range(n)] for _ in range(n)]
 
-for i in range(len(matrix)):
-    for j in range(len(matrix[i])):
-        if i != j:
-            matrix[i][j] *= 2
+print("Исходная:")
+[print(row) for row in matrix]
 
-print("\nМатрица после умножения недиагональных элементов на 2:")
-for row in matrix:
-    print(row)
+print("\nИзменённая:")
+[print(row) for row in modify_matrix(matrix)]
